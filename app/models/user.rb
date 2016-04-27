@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}
-
+  has_many :wikis
 end
