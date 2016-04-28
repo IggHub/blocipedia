@@ -13,9 +13,10 @@ class WikisController < ApplicationController
 
   def create
 
-     @wiki = Wiki.new
-     @wiki.title = params[:wiki][:title]
-     @wiki.body = params[:wiki][:body]
+     @wiki = Wiki.new(wiki_params)
+     @wiki.user = current_user
+#     @wiki.title = params[:wiki][:title]
+#     @wiki.body = params[:wiki][:body]
 
      if @wiki.save
 
@@ -37,8 +38,8 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
 
-    if @wiki.save
-      flash[:notice] = "Wiki was updated successfully."
+    if @wiki.update_attributes(wiki_params)
+      flash[:notice] = "Wiki was updated!"
       redirect_to @wiki
     else
       flash.now[:alert] = "There was an error saving the wiki. Please try again."
@@ -58,4 +59,10 @@ class WikisController < ApplicationController
       render :show
     end
   end
+
+  private
+#expect these 4 attributes
+   def wiki_params
+     params.require(:wiki).permit(:title, :body, :private, :user)
+   end
 end
