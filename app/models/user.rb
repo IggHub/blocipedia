@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}
   has_many :wikis
+  enum role: [:standard, :premium, :admin]
+  after_initialize :set_default_role #fter_initialize callback is triggered for each object that is found and instantiated by a finder, with after_initialize being triggered after new objects are instantiated as well.
+
+
+  private
+
+  def set_default_role
+    self.role ||= :standard
+  end
 end
