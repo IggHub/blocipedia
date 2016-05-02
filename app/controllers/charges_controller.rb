@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
   def new
-    @amount = 500
+    @amount = 10000
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
       description: "Blocipedia - #{current_user.email}",
@@ -11,7 +11,7 @@ class ChargesController < ApplicationController
   def create
     # Creates a Stripe Customer object, for associating
     # with the charge
-     @amount = 500
+     @amount = 10000
 
     customer = Stripe::Customer.create(
       email: current_user.email,

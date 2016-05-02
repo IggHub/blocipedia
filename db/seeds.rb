@@ -21,7 +21,8 @@ users = User.all
   Wiki.create!(
     title: Faker::Lorem.word,
     body: Faker::Lorem.sentence,
-    user: users.sample
+    user: users.sample,
+    private: Faker::Boolean.boolean(0.2)
   )
 end
 
