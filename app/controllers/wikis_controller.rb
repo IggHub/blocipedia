@@ -61,6 +61,7 @@ class WikisController < ApplicationController
     end
   end
 
+
   private
 #expect these 4 attributes
    def wiki_params
