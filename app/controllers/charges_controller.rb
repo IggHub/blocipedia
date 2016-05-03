@@ -38,7 +38,11 @@ class ChargesController < ApplicationController
 
     def downgrade
       current_user.update_attribute(:role, 0)
+      current_user.wikis.update_all(:private => false)
       flash[:notice] = "We are sorry to downgrade you, #{current_user.username} - hope you enjoy being mediocre!"
+    # downgrade_wiki = Wiki.where(:user_id => current_user.id, :private => [false, true])
+    # downgrade_wiki.update_attribute(:private, false)
+    # Wiki.update(id, :private => false)
       redirect_to wikis_path
     end
 
