@@ -23,7 +23,7 @@ gem 'pry'
 gem 'devise'
 gem 'pundit'
 gem 'stripe'
-
+gem 'redcarpet'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
