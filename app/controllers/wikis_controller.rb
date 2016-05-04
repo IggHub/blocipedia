@@ -1,6 +1,10 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wiki.visible_to(current_user)
+    if current_user == nil
+      @wikis = Wiki.visible_to_all
+    else
+      @wikis = Wiki.visible_to_login(current_user)
+    end
 
   end
 
