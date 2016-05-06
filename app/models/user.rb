@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}
+
   has_many :wikis
+  has_many :wiki_collaborators
+  has_many :collaborations, through: :wiki_collaborators, source: :wiki, class_name: 'Wiki'
+
+
+
   enum role: [:standard, :premium, :admin]
   after_initialize :set_default_role #fter_initialize callback is triggered for each object that is found and instantiated by a finder, with after_initialize being triggered after new objects are instantiated as well.
 
@@ -15,4 +21,6 @@ class User < ActiveRecord::Base
   def set_default_role
     self.role ||= :standard
   end
+
+
 end

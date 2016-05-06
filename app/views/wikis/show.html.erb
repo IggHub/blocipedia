@@ -9,3 +9,19 @@
     <%= link_to "Delete", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
   </div>
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <h4>List of Wiki Collaborators:</h4>
+    <% @wiki.collaborators.each do |collaborator| %>
+      <p>
+        <%= collaborator.user.email %> <small><em> - user ID: <%= collaborator.user.id%></em></small>
+        <!-- delete collaborator option only available to creator -->
+        <% if @wiki.user == current_user %>
+          <%= link_to "Remove", @collaborator, method: :delete, class: 'glyphicon glyphicon-ok' %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
