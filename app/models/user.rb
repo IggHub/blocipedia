@@ -7,9 +7,8 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}
 
   has_many :wikis
-  has_many :wiki_collaborators
-  has_many :collaborations, through: :wiki_collaborators, source: :wiki, class_name: 'Wiki'
-
+  has_many :collaborators
+  has_many :wikis, through: :collaborators
 
 
   enum role: [:standard, :premium, :admin]
