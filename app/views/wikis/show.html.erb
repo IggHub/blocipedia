@@ -18,7 +18,7 @@
       <p>
         <%= collaborator.user.email %> <small><em> - user ID: <%= collaborator.user.id%></em></small>
         <!-- delete collaborator option only available to creator -->
-        <% if @wiki.user == current_user %>
+        <% if @wiki.user.premium? || @wiki.use.admin? %>
           <%= link_to "Remove", @collaborator, method: :delete, class: 'glyphicon glyphicon-ok' %>
         <% end %>
       </p>
