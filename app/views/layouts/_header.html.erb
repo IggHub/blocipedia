@@ -9,32 +9,38 @@
         <li><%= link_to "About", about_path, id: "logo" %></li>
         <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-        <li>Hola, <strong><%= current_user.username %> </strong> -
-        <%= link_to "Upgrade to Premium!", new_charge_path %></li>
+        <li><%= link_to "Try Premium!", new_charge_path, id: "logo" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
       </ul>
       <% elsif user_signed_in? && current_user.premium?%>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Blocipedia", root_path %></li>
-        <li><%= link_to "Wikis", wikis_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <li>Hola, <strong><%= current_user.username %> </strong></li>
-        <li><%= link_to "Downgrade to standard", downgrade_path%></li>
+        <li><%= link_to "Blocipedia", root_path, id: "logo" %></li>
+        <li><%= link_to "Wikis", wikis_path, id: "logo" %></li>
+        <li><%= link_to "About", about_path, id: "logo" %></li>
+        <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
+        <li><%= link_to "Downgrade to standard", downgrade_path, id: "logo"%></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
       </ul>
       <% elsif user_signed_in? && current_user.admin?%>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Blocipedia", root_path %></li>
-        <li><%= link_to "Wikis", wikis_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <li>Hola, <strong><%= current_user.username %> </strong></li>
+        <li><%= link_to "Blocipedia", root_path, id: "logo" %></li>
+        <li><%= link_to "Wikis", wikis_path, id: "logo" %></li>
+        <li><%= link_to "About", about_path, id: "logo" %></li>
+        <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
       </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, id: "logo" %></li>
+        <li><%= link_to "Login", new_user_session_path, id: "logo" %></li>
       </ul>
       <% end %>
 
