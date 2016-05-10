@@ -51,12 +51,23 @@ h3{
     padding: 0;
     margin-bottom: 24px;
     color: #777;
+    text-align: center;
   }
+
+h4{
+  font-weight : 300;
+  padding: 1px 20px 1px 20px;
+}
+
+.form-group {
+  padding: 1px 20px 1px 20px;
+}
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 
 /* header */
 
@@ -89,4 +100,20 @@ p {
 #devise-button:hover{
   color: #fff;
   text-decoration: none;
+}
+
+.checkbox{
+    padding: 1px 20px 1px 20px;
+}
+
+.field{
+  padding: 5px 20px 5px 20px;
+}
+
+.stripe-card{
+  text-align: center;
+}
+
+.login{
+  color: #777
 }

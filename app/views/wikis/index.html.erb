@@ -1,10 +1,10 @@
-<h1>All Wikis</h1>
+<h3>Wikis</h3>
 
  <% @wikis.each do |wiki| %>
    <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <%= link_to wiki.title, wiki %> by <small><%= wiki.user_id %></small>
+        <%= link_to wiki.title, wiki %> <small><em>- by <%= wiki.user_id %></em></small>
       </h4>
     </div>
   </div>

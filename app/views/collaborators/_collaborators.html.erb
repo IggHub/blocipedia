@@ -11,13 +11,13 @@
 <!-- displays list of collaborators -->
 <div class="container">
   <div class="row">
-    <h4>List of Wiki Collaborators:</h4>
+    <h2>Collaborators:</h2>
     <% @wiki.collaborators.each do |collaborator| %>
       <p>
         <%= collaborator.user.email %>
         <!-- delete collaborator option only available to creator -->
         <% if @wiki.user == current_user %>
-          <%= link_to "", [collaborator], method: :delete, class: 'glyphicon glyphicon-ok' %>
+          <%= link_to "", [collaborator], method: :delete, class: 'glyphicon glyphicon-remove' %>
         <% end %>
       </p>
     <% end %>
