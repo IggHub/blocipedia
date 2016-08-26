@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504201236) do
+ActiveRecord::Schema.define(version: 20160826221620) do
 
   create_table "collaborators", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 20160504201236) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.string   "username"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
