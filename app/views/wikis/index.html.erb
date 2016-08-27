@@ -1,11 +1,25 @@
-<h3>Wikis</h3>
+<div class="container">
+  <h3>Wikis</h3>
 
- <% @wikis.each do |wiki| %>
-   <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to wiki.title, wiki %> <small><em>- by <%= wiki.user_id %></em></small>
-      </h4>
+
+    <div class = "row">
+      <div class = "col-lg-8">
+        <% @wikis.each do |wiki| %>
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <%= link_to wiki.title, wiki %> <small><em>- by <%= wiki.user_id %></em></small>
+            </h4>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
+
+    <div class = "col-lg-4">
+      <%= link_to "New", new_wiki_path, class: "btn btn-primary"%>
     </div>
   </div>
- <% end %>
+
+</div>
