@@ -24,6 +24,7 @@ gem 'devise'
 gem 'pundit'
 gem 'stripe'
 gem 'redcarpet'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'

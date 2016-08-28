@@ -1,9 +1,12 @@
+require 'will_paginate'
+
 class WikisController < ApplicationController
   def index
     if current_user == nil
       @wikis = Wiki.visible_to_all
     else
       @wikis = policy_scope(Wiki)
+
     end
 
   end
