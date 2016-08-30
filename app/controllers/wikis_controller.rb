@@ -6,9 +6,7 @@ class WikisController < ApplicationController
       @wikis = Wiki.visible_to_all
     else
       @wikis = policy_scope(Wiki)
-
     end
-
   end
 
   def show
