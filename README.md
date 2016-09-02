@@ -1,6 +1,6 @@
 # Blocipedia
 
-_Reading time: < 3 min_
+Demo: [Blocipedia](https://mighty-journey-47111.herokuapp.com/)
 
 ### Wikis + markdowns + sass = **awesome**!
 
