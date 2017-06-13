@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blocipedia</title>
+  <title>Wikey-Cloney</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,11 +26,9 @@
 </head>
 <body>
 
-
-
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
-    <% end %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
 
   <% if flash[:notice] %>
     <div class="alert alert-success">
@@ -49,10 +47,9 @@
     </div>
   <% end %>
 
-<div class="container">
-  <%= render 'layouts/header'%>
+
+
   <%= yield %>
-</div>
 
 
     </div>

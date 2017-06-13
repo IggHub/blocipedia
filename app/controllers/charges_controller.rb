@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  #stripe data on new page
   def new
     @amount = 500
     @stripe_btn_data = {
@@ -18,7 +19,6 @@ class ChargesController < ApplicationController
       card: params[:stripeToken]
     )
 
-    # Where the real magic happens
     charge = Stripe::Charge.create(
       customer: customer.id, # Note -- this is NOT the user_id in your app
       amount: @amount,
@@ -40,9 +40,6 @@ class ChargesController < ApplicationController
       current_user.update_attribute(:role, 0)
       current_user.wikis.update_all(:private => false)
       flash[:notice] = "We are sorry to downgrade you, #{current_user.username} - hope you enjoy being mediocre!"
-    # downgrade_wiki = Wiki.where(:user_id => current_user.id, :private => [false, true])
-    # downgrade_wiki.update_attribute(:private, false)
-    # Wiki.update(id, :private => false)
       redirect_to wikis_path
     end
 

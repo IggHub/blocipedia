@@ -1,124 +1,50 @@
-<!--<header class="navbar navbar-fixed-top navbar-default">
-  <div class="container">
-
-
-      <% if user_signed_in? && current_user.standard?%>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Blocipedia", root_path, id: "logo" %></li>
-        <li><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-        <li><%= link_to "New", new_wiki_path, id: "logo" %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-        <li><%= link_to "Try Premium!", new_charge_path, id: "logo" %></li>
-      </ul>
-
-
-
-      <ul class="nav navbar-nav navbar-right">
-        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
-      </ul>
-
-      <% elsif user_signed_in? && current_user.premium?%>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Blocipedia", root_path, id: "logo" %></li>
-        <li><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-        <li><%= link_to "New", new_wiki_path, id: "logo" %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-        <li><%= link_to "Downgrade to standard", downgrade_path, id: "logo"%></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
-      </ul>
-
-      <% elsif user_signed_in? && current_user.admin?%>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Blocipedia", root_path, id: "logo" %></li>
-        <li><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-        <li><%= link_to "New", new_wiki_path, id: "logo" %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path, id: "logo" %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li id= "right">Hello, <strong><%= current_user.username %> </strong></li>
-      </ul>
-      <% else %>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Sign up", new_user_registration_path, id: "logo" %></li>
-        <li><%= link_to "Login", new_user_session_path, id: "logo" %></li>
-      </ul>
-      <% end %>
-
-  </div>
-</header>
--->
-<!-- New header below -->
 
 <header>
-<div class="header clearfix">
-  <div class="container">
+  <div class= "clearfix">
     <div class = "row">
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <nav>
-<!--
+          <% if user_signed_in? && current_user.standard?%>
+              <ul class="nav nav-pills pull-left">
+                <li role = "presentation"class="text-white"><%= link_to "Home", root_path, id: "logo" %></li>
+                <li role = "presentation"class="text-white"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
+              </ul>
+              <ul class="nav nav-pills pull-right">
+                <li role = "presentation" class="text-white"><%= link_to "Try Premium!", new_charge_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white" ><%= link_to current_user.username, edit_user_registration_path, id: "logo" %>
+                <li role = "presentation" class="text-white"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
+                </li>
+              </ul>
 
+            <% elsif user_signed_in? && current_user.premium?%>
+              <ul class="nav nav-pills pull-left">
+                <li role = "presentation" class="text-white"><%= link_to "Home", root_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
+              </ul>
+              <ul class="nav nav-pills pull-right">
+                <li role = "presentation" class="text-white"><%= link_to "Downgrade", downgrade_path, id: "logo"%></li>
+                <li role = "presentation" class="text-white"><%= link_to current_user.username, edit_user_registration_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
+              </ul>
 
-        <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active">
-                <a href="#">Home</a>
-            </li>
+            <% elsif user_signed_in? && current_user.admin?%>
+              <ul class="nav nav-pills pull-left">
+                <li role = "presentation" class="text-white"><%= link_to "Home", root_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
+              </ul>
+              <ul class="nav nav-pills pull-right">
+                <li role = "presentation" class="text-white"><%= link_to current_user.username, edit_user_registration_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
+              </ul>
 
-            <li role="presentation">
-                <a href="#">About</a>
-            </li>
-            <li role="presentation">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-
-
--->
-
-            <% if user_signed_in? && current_user.standard?%>
-                <ul class="nav nav-pills pull-right">
-                  <li role = "presentation"><%= link_to "Home", root_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Try Premium!", new_charge_path, id: "logo" %></li>
-                  <li role = "presentation" ><%= link_to current_user.username, edit_user_registration_path, id: "logo" %>
-                  <li role = "presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-                  </li>
-                </ul>
-
-              <% elsif user_signed_in? && current_user.premium?%>
-                <ul class="nav nav-pills pull-right">
-                  <li role = "presentation"><%= link_to "Home", root_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Downgrade", downgrade_path, id: "logo"%></li>
-                  <li role = "presentation"><%= link_to current_user.username, edit_user_registration_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-                </ul>
-
-              <% elsif user_signed_in? && current_user.admin?%>
-                <ul class="nav nav-pills pull-right">
-                  <li role = "presentation"><%= link_to "Home", root_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Wikis", wikis_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to current_user.username, edit_user_registration_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logo" %></li>
-                </ul>
-
-              <% else %>
-                <ul class="nav nav-pills pull-right">
-                  <li role = "presentation"><%= link_to "Sign up", new_user_registration_path, id: "logo" %></li>
-                  <li role = "presentation"><%= link_to "Login", new_user_session_path, id: "logo" %></li>
-                </ul>
-              <% end %>
-
-
+            <% else %>
+              <ul class="nav nav-pills pull-right">
+                <li role = "presentation" class="text-white"><%= link_to "Sign up", new_user_registration_path, id: "logo" %></li>
+                <li role = "presentation" class="text-white"><%= link_to "Login", new_user_session_path, id: "logo" %></li>
+              </ul>
+            <% end %>
           </nav>
         </div>
-
       </div>
-
     </div>
-  </div>
 </header>
