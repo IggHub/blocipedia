@@ -75,12 +75,25 @@ p {
   float: left;
   margin-right: 5px;
   font-size: 1.2em;
-  color: #777;
+  color: #fff;
   padding-top: 3px;
 }
 
 #logo:hover {
   color: #fff;
+  text-decoration: none;
+}
+
+#logo-wiki {
+  float: left;
+  margin-right: 5px;
+  font-size: 1.2em;
+  color: #777;
+  padding-top: 3px;
+}
+
+#logo-wiki:hover {
+  color: #777;
   text-decoration: none;
 }
 
@@ -126,5 +139,5 @@ p {
 }
 
 .text-white {
-  font-color: "#ffffff"
+  font-color: "red"
 }
