@@ -25,6 +25,7 @@ gem 'pundit'
 gem 'stripe'
 gem 'redcarpet'
 gem 'will_paginate'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
