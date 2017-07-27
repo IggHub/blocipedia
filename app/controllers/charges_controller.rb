@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
     @amount = 500
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
-      description: "Blocipedia - #{current_user.username}",
+      description: "Wikey Cloney - #{current_user.username}",
       amount: @amount
     }
   end

@@ -1,10 +1,10 @@
-# Blocipedia
+# Wikey Cloney
 
-Demo: [Blocipedia](https://mighty-journey-47111.herokuapp.com/)
+Demo: [Wikey Cloney Link](https://mighty-journey-47111.herokuapp.com/)
 
 ### Wikis + markdowns + sass = **awesome**!
 
-Blocipedia is a simple app to post information online!
+Wikey is a simple app to post information online!
 
 ### Features
 
